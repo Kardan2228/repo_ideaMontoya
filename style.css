@@ -65,7 +65,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color:azure;
+  color:black;
 }
 aside ul li a, #listaNav_h li a {
   color: darkslategray;
@@ -115,15 +115,18 @@ nav ul a {
   padding: 10px;
 }
 nav ul {
-  margin-left: -20px;
+  margin-left: 0px;
 }
 section h2 {
   border-bottom: 15px;
   text-align: center;
 }
+section p {
+  text-align: justify;
+}
 article {
   border-bottom: 15px;
-  text-align:justify;
+  text-align:justify !important;
 }
 iframe {
   display: block;
@@ -138,6 +141,16 @@ article img {
 }
 section {
   padding: 20px;
+}
+#newsSubt, #enlacesPie {
+  text-align: center;
+}
+#enlacesPie {
+  margin: 5px;
+}
+#btnCont {
+  width: auto;
+  height: auto;
 }
 /*Aquí comienza el grid*/
 #cuerpo > header {
