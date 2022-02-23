@@ -2,10 +2,12 @@ body {
   color: black;
   font-family: "Times New Roman", Times, serif !important;
 }
+
 #cuerpo {
   width: 100%;
   height: 600px;
 }
+
 header,
 footer,
 aside,
@@ -13,65 +15,93 @@ section,
 nav {
   border-bottom: 15px;
 }
+
 .titulo {
+  -webkit-animation-duration: 3s;
   animation-duration: 3s;
+  -webkit-animation-name: slidein;
   animation-name: slidein;
 }
+
 /*Animación del título*/
-@keyframes slidein {
+@-webkit-keyframes slidein {
   from {
     margin-left: 100%;
     width: 100%;
   }
-
   to {
     margin-left: 35%;
     width: 100%;
   }
 }
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 100%;
+  }
+  to {
+    margin-left: 35%;
+    width: 100%;
+  }
+}
+
 input {
   width: 10opx;
   height: 20px;
+  -webkit-transition: all 2s;
   transition: all 2s;
 }
+
 input:focus {
   width: 300px;
   height: 40px;
   font-size: 24px;
 }
+
 nav {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(gainsboro),
+    color-stop(gray),
+    to(black)
+  );
   background-image: linear-gradient(to right, gainsboro, gray, black);
 }
+
 section {
   background-color: gainsboro;
 }
+
 header,
 aside,
 nav {
   background-color: gray;
 }
+
 footer {
   background-color: black;
 }
+
 h1,
 nav ul li {
   display: inline;
 }
+
 /*Quita las viñetas*/
 ul {
   list-style-type: none;
 }
-/*Elimina el underline de los enlaces*/
 a {
   text-decoration: none;
 }
-a:hover {
-  color: black;
-}
+
 aside ul li a,
 #listaNav_h li a {
   color: darkslategray;
 }
+
 footer ul li a {
   color: darkgrey !important;
 }
@@ -88,98 +118,136 @@ footer img {
   aspect-ratio: auto 60 / 60;
   height: 40px;
 }
+
 nav {
   font-size: large;
   font-weight: 500;
 }
+
 header,
 footer,
 nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
+
 aside {
   padding: 20px;
 }
+
 aside ul li {
   padding: 2px;
   margin-left: -20px;
 }
+
 footer {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
+
 header {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 30px;
 }
+
 nav ul a {
   padding: 10px;
 }
+
 nav ul {
   margin-left: 0px;
 }
+
 section h2 {
   border-bottom: 15px;
   text-align: center;
 }
+
 section p {
   text-align: justify;
 }
+
 article {
   border-bottom: 15px;
   text-align: justify !important;
 }
+
 iframe {
   display: block;
   margin: 0px auto;
 }
+
 article img {
   width: 500px;
   height: 500px;
-  /*Centra la imagen*/
   display: block;
   margin: 0px auto;
 }
+
 section {
   padding: 20px;
 }
+
 #newsSubt,
 #enlacesPie {
   text-align: center;
 }
+
 #enlacesPie {
   margin: 5px;
 }
+
 #btnCont {
   width: auto;
   height: auto;
 }
+
 /*Aquí comienza el grid*/
 #cuerpo > header {
   grid-area: head;
 }
+
 #cuerpo > nav {
   grid-area: nav;
 }
+
 #cuerpo > aside {
   grid-area: aside;
 }
+
 #cuerpo > section {
   grid-area: section;
 }
+
 #cuerpo > #noticias {
   grid-area: noticias;
 }
+
 #cuerpo > footer {
   grid-area: foot;
 }
+
 #cuerpo {
+  display: -ms-grid;
   display: grid;
 }
+
 @media screen and (min-width: 320px) {
   #cuerpo {
+    -ms-grid-columns: auto;
     grid-template-columns: auto;
+    -ms-grid-rows: 18% auto auto 10%;
     grid-template-rows: 18% auto auto 10%;
     grid-template-areas:
       "head"
@@ -193,7 +261,11 @@ section {
     display: none;
   }
   nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
   }
   #menuBurger {
@@ -203,9 +275,12 @@ section {
     margin: 30px;
   }
 }
+
 @media screen and (min-width: 800px) {
   #cuerpo {
+    -ms-grid-columns: auto auto auto;
     grid-template-columns: auto auto auto;
+    -ms-grid-rows: 20% 5% auto 15%;
     grid-template-rows: 20% 5% auto 15%;
     grid-template-areas:
       "head head head"
