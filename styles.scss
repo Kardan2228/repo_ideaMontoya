@@ -1,7 +1,8 @@
 @import "variables";
 /* Utilizando & en Sass */
-input {
-  width: 10opx;
+#buscaHeader,
+#buscaNav {
+  width: 150px;
   height: 20px;
   -webkit-transition: all 2s;
   transition: all 2s;
@@ -23,10 +24,19 @@ nav ul li {
 ul {
   list-style-type: none;
 }
-#btnCont {
-    width: auto;
-    height: auto;
+.btnCont {
+  width: auto;
+  height: auto;
+  color: $color_fuenteNav;
+  font-style: initial;
+  margin-left: 50px;
+  /*Se aplica extend a los botones de la página contacto*/
+  &--limpiar {
+    @extend .btnCont;
+    color: $color_secundario;
   }
+}
+
 /*Aquí comienza el grid*/
 /*Se utiliza la anidación Sass para escribir menos código*/
 #cuerpo {
@@ -68,22 +78,18 @@ ul {
     }
     @-webkit-keyframes slidein {
       from {
-        margin-left: 100%;
-        width: 100%;
+        @include sizes(35%, 100%);
       }
       to {
-        margin-left: 35%;
-        width: 100%;
+        @include sizes(35%, 100%);
       }
     }
     @keyframes slidein {
       from {
-        margin-left: 100%;
-        width: 100%;
+        @include sizes(100%, 100%);
       }
       to {
-        margin-left: 35%;
-        width: 100%;
+        @include sizes(35%, 100%);
       }
     }
   }
@@ -135,22 +141,31 @@ ul {
       border-bottom: 15px;
       text-align: center;
     }
-    p {
-      text-align: justify;
-    }
-    .article__video {
-      text-align: center;
-    }
-    iframe {
-      display: block;
-      margin: 0px auto;
-    }
-    img {
-      width: 500px;
-      height: 500px;
-      /*Centra la imagen*/
-      display: block;
-      margin: 0px auto;
+    /* Se agrega map-get en los artículos del index*/
+    article {
+      background-color: map-get($estiloArt, fondoArt);
+      padding: map-get($map: $estiloArt, $key: paddingArt);
+      h3 {
+        color: map-get($map: $estiloArt, $key: tituloArt);
+      }
+      p {
+        text-align: map-get($map: $estiloArt, $key: alineaPar);
+        color: map-get($map: $estiloArt, $key: parrafoArt);
+      }
+      .article__video {
+        text-align: map-get($map: $estiloArt, $key: alineaVid);
+      }
+      iframe {
+        display: block;
+        margin: 0px auto;
+      }
+      img {
+        width: 500px;
+        height: 500px;
+        /*Centra la imagen*/
+        display: block;
+        margin: 0px auto;
+      }
     }
   }
   #noticias {

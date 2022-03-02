@@ -1,8 +1,16 @@
+/*Variables de color*/
 $color_primario: black;
 $color_secundario: gray;
 $color_terciario: gainsboro;
 $color_fuenteNav: darkslategray;
 $color_fuenteFoot: darkgray;
-
+/*Variables de fuente*/
 $fuente_primaria: "Roboto Serif";
 $fuente_secundaria: "Times New Roman", Times, serif;
+/*Mapa de formato*/
+$estiloArt: (tituloArt:darkslategray, parrafoArt:dimgray, fondoArt: lightgray, paddingArt: 20px, alineaPar: justify, alineaVid: center);
+/*Mixin para taamños*/
+@mixin sizes($margin-left, $width) {
+    margin-left: $margin-left;
+    width: $width;
+} 

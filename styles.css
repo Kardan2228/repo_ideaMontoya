@@ -1,13 +1,19 @@
 @charset "UTF-8";
+/*Variables de color*/
+/*Variables de fuente*/
+/*Mapa de formato*/
+/*Mixin para taamños*/
 /* Utilizando & en Sass */
-input {
-  width: 10opx;
+#buscaHeader,
+#buscaNav {
+  width: 150px;
   height: 20px;
   -webkit-transition: all 2s;
   transition: all 2s;
 }
 
-input:focus {
+#buscaHeader:focus,
+#buscaNav:focus {
   width: 300px;
   height: 40px;
   font-size: 24px;
@@ -28,9 +34,17 @@ ul {
   list-style-type: none;
 }
 
-#btnCont {
+.btnCont, .btnCont--limpiar {
   width: auto;
   height: auto;
+  color: darkslategray;
+  font-style: initial;
+  margin-left: 50px;
+  /*Se aplica extend a los botones de la página contacto*/
+}
+
+.btnCont--limpiar {
+  color: gray;
 }
 
 /*Aquí comienza el grid*/
@@ -81,7 +95,7 @@ ul {
 
 @-webkit-keyframes slidein {
   from {
-    margin-left: 100%;
+    margin-left: 35%;
     width: 100%;
   }
   to {
@@ -139,6 +153,7 @@ ul {
   grid-area: section;
   background-color: gainsboro;
   padding: 20px;
+  /* Se agrega map-get en los artículos del index*/
 }
 
 #cuerpo section h2 {
@@ -146,20 +161,30 @@ ul {
   text-align: center;
 }
 
-#cuerpo section p {
-  text-align: justify;
+#cuerpo section article {
+  background-color: lightgray;
+  padding: 20px;
 }
 
-#cuerpo section .article__video {
+#cuerpo section article h3 {
+  color: darkslategray;
+}
+
+#cuerpo section article p {
+  text-align: justify;
+  color: dimgray;
+}
+
+#cuerpo section article .article__video {
   text-align: center;
 }
 
-#cuerpo section iframe {
+#cuerpo section article iframe {
   display: block;
   margin: 0px auto;
 }
 
-#cuerpo section img {
+#cuerpo section article img {
   width: 500px;
   height: 500px;
   /*Centra la imagen*/
