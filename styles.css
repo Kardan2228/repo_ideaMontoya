@@ -142,6 +142,7 @@ ul {
 
 #cuerpo aside a:hover {
   color: black;
+  padding: 10px;
 }
 
 #cuerpo aside li {
